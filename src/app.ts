@@ -2,11 +2,12 @@ const taskNameInputElement: HTMLInputElement= document.querySelector("#name");
 const addButtonElement: HTMLButtonElement= document.querySelector("button");
 const tasksContainerElement: HTMLElement= document.querySelector(".tasks");
 
-
-const tasks: {
+interface Task{
     name: string;
     isDone: boolean;
-}[] = [
+    
+}
+const tasks: Task[] = [
 {
     name: "Go to the gym ",
     isDone: false
@@ -46,14 +47,14 @@ const render = () =>{
     });
 };
 
-const addTask= (taskName: string) => {
-    tasks.push({name: taskName, isDone: false})
+const addTask= (task: Task) => {
+    tasks.push(task);
 };
 
 addButtonElement.addEventListener("click", (event: Event) =>{
     event.preventDefault();
-    addTask(taskNameInputElement.value);
+    addTask({name: taskNameInputElement.value, isDone: false});
     render();
 });
-
+addTask({name:"Do sth", isDone: true});
 render();
