@@ -1,24 +1,30 @@
 const taskNameInputElement = document.querySelector("#name");
 const addButtonElement = document.querySelector("button");
 const tasksContainerElement = document.querySelector(".tasks");
+const categories = ['general', 'work', 'gym', 'hobby'];
 const tasks = [
     {
         name: "Go to the gym ",
-        isDone: false
+        isDone: false,
+        category: 'gym'
     },
     {
         name: "Go to the shopping ",
         isDone: false
     },
     {
-        name: "Clean room ",
-        isDone: false
+        name: "Top5",
+        isDone: false,
+        category: 'work'
     }
 ];
 const render = () => {
     tasksContainerElement.innerHTML = "";
     tasks.forEach((task, index) => {
         const taskElement = document.createElement("li");
+        if (task.category) {
+            taskElement.classList.add(task.category);
+        }
         const id = `task-${index}`;
         const labelElement = document.createElement("label");
         labelElement.innerText = task.name;

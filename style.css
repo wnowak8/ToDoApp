@@ -26,7 +26,7 @@ body {
     background: #650d5b;
     border-radius: 4px;
     display: inline-block;
-    padding: 16px;
+    padding: 25px;
 }
 
 input[type="text"] {
@@ -58,4 +58,24 @@ button:hover {
 
 input[type='checkbox'] {
     accent-color: #242526;
+}
+
+input[type="radio"]:checked  {
+    accent-color: #232323;
+  }
+
+.gym{
+    color: rgb(125, 115, 131);
+}
+
+.hobby{
+    color: rgb(121, 190, 119);
+}
+
+.work{
+    color: rgb(85, 219, 156);
+}
+
+ul {
+    list-style-type: none;
 }
